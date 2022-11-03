@@ -1,0 +1,15 @@
+workflows:
+  my-workflow:
+    scripts:
+      - name: Build Android APK
+        working_directory: android
+        script: ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/**/**/*.apk
+    publishing:
+      email:
+        recipients:
+          - ongouadimitri5@gmail.com
+        notify:
+          success: true
+          failure: false
