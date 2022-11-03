@@ -11,6 +11,8 @@ workflows:
     scripts:
       - name: Set Android SDK location
         script: | 
+          ls $CM_BUILD_DIR/android
+          touch $CM_BUILD_DIR/android/local.properties
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Build Android release
         script: | 
